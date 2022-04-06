@@ -1,0 +1,29 @@
+\section*{Appendix}
+
+% In the appendix section we include subsections that detail some procedure or topic within the research document
+
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\Roman{subsection}}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\addcontentsline{toc}{section}{Appendix}
+
+% Resetear los contadores de floats
+\newcommand{\resetCounters}{
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}}
+
+\resetCounters{}
+
+% Change figures, tables, and equations numbering
+\renewcommand{\thefigure}{\thesubsection-\arabic{figure}}
+\renewcommand{\thetable}{\thesubsection-\arabic{table}}
+\renewcommand{\theequation}{\thesubsection-\arabic{equation}}
+
+% Appendix subsections: 
+% ------------------------------------
+
+% Formula explanation
+\input{appendix/formula_explanation.tex}
+

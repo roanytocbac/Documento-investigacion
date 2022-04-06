@@ -1,0 +1,34 @@
+\subsection{Formula explanation}
+\label{appendix:formula_explanation}
+
+% String literals
+\newcommand{\mse}{\text{MSE}(\hat{\pi}^{\star})}
+\newcommand{\bias}{\text{Bias}_{\pi}}
+\newcommand{\variance}{\text{Var}_\pi}
+% Operations
+\newcommand{\sumovert}{\sum_{t=1}^{T}}
+\newcommand{\meanovert}{\frac{1}{T}\sum_{t=1}^{T}}
+% Population parameter and inflation measure
+\newcommand{\hatpi}{\hat{\pi}^{\star}}
+\newcommand{\barhatpi}{\overline{\hat{\pi}^{\star}}}
+\newcommand{\barpi}{\overline{\pi}}
+\newcommand{\err}{e}
+% Standard errors of parameter and estimator
+\newcommand{\spi}{s_{\pi}}
+\newcommand{\shatpi}{s_{\hatpi}}
+\newcommand{\corr}{r^{\star}}
+
+
+Consider the error time series $\err_t = \hatpi_t - \pi_t$ for the inflation measure $\hatpi$. Then, $\bias = \meanovert\err_t = \meanovert\hatpi_t - \meanovert\pi_t = \barhatpi-\barpi$. 
+First, we show in \ref{eq:mse_is_square_error_plus_bias} that $\mse = \bias^2 + \variance$, where $\variance=\meanovert(\err_t-\bias)^2$ represents the variance of prediction error. This is the classical bias-variance decomposition of the mean square error. 
+
+\begin{equation}
+    \begin{aligned}
+        \mse & = \meanovert (\hatpi_t - \pi_t)^2\\
+        ~ & = \meanovert \left[ (\err_t - \bias) + \bias \right]^2 \\
+        ~ & = \meanovert\bias^2 + 2\,\bias\,\meanovert(\err_t-\bias) + \meanovert(\err_t-\bias)^2  \\
+        ~ & = \bias^2 + \underbrace{2\,\bias\left(\meanovert\err_t - \meanovert\bias\right)}_{=0} + \meanovert(\err_t-\bias)^2\\
+        ~ & = \bias^2 + \variance
+    \end{aligned}
+    \label{eq:mse_is_square_error_plus_bias}
+\end{equation}

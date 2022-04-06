@@ -1,0 +1,69 @@
+\documentclass{diereport}
+
+\title{Título del documento\footnote{Las opiniones expresadas en este documento representan las de los autores y no necesariamente aquellas del Banco de Guatemala.}}
+\author{
+  Autor 1\thanks{Autor de correspondencia. Departamento de Investigaciones Económicas, Banco de Guatemala, 7ma. Avenida 22-01 zona 1, Guatemala 01001, Guatemala.}\\
+  {\small Banco de Guatemala
+  }\\
+  {\footnotesize\href{mailto:correo@banguat.gob.gt}{\texttt{correo@banguat.gob.gt}}}
+  \and
+  Autor 2\\
+  {\small Banco de Guatemala}\\
+  {\footnotesize\href{mailto:correo@banguat.gob.gt}{\texttt{correo@banguat.gob.gt}}}
+%  % Descomentar para más autores
+%   \and
+%   Autor 3\\
+%   {\small Banco de Guatemala}\\
+%   {\footnotesize\href{mailto:correo@banguat.gob.gt}{\texttt{correo@banguat.gob.gt}}}
+}
+
+% bibliografía
+\addbibresource{references.bib}
+
+\begin{document}
+	
+	% Portada del documento
+	\maketitle
+	% \vspace*{-2cm}
+
+	% Índice y demás tablas de contenidos
+	%\pagenumbering{Roman}
+	%\setcounter{page}{2}
+	
+	\begin{abstract}
+	En este documento se investiga el efecto de ...
+	\lipsum[10]
+
+	\noindent \textit{JEL classification: E37, E52}.
+	\end{abstract}
+	
+	% Index 
+	% \tableofcontents
+	
+	% Corpus
+
+    % Introduction 
+	\input{sections/introduction}
+
+	% Literature review
+	\input{sections/literature_review}
+	
+	% Methodology
+	\input{sections/methodology}
+	
+	% Results
+	\input{sections/results}
+		
+	% Main findings
+	\input{sections/conclusions}
+
+	% References
+	% \clearpage
+	\printbibliography
+	
+	% Appendix 
+	\newpage
+	\input{appendix/appendix}
+
+
+\end{document}

@@ -1,0 +1,17 @@
+\begin{algorithm}
+	\caption{Cómputo para la Media Truncada Ponderada con límites $l_1$ y $l_2$}
+	\label{alg:media_truncada_ponderada}
+	\begin{algorithmic}[1]
+		\Require Conjunto de variaciones intermensuales del período $t$: $V_t$.
+		\Require Ponderaciones $w_x$ de las variaciones intermensuales.
+		\Require Percentiles límite $l_1$ y $l_2$.
+				
+		\State Forzar $w_x = 0$ para cualquier $x$ tal que $v_x < v_{l_1} $ o $v_x > v_{l_2} $.
+		
+		\State Defina $w_x' = w_x / \sum_{x} w_x $. 
+		\Comment{De esta forma $\sum_{x} w_x' = 1$.}
+		
+		\State Obtenga el promedio ponderado truncado $\bar{v}_t = \sum_{x} w_x' v_{x,t}$
+		
+	\end{algorithmic}
+\end{algorithm}
